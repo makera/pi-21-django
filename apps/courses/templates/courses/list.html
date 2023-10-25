@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for course in object_list %}
+<p>{{ course.name }}</p>
+<a href="{% url 'course_detail' course.id %}">Ссылка</a>
+{% endfor %}
+
+<form action="{% url 'course_list' %}" method="get">
+    <input type="text" name="q" />
+    <input type="submit" />
+</form>
+
+</body>
+</html>

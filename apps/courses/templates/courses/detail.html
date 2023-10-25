@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{object.name}}</h1>
+
+<ul>
+    {% for theme in object.themes.all %}
+    <li>{{ theme.name }}</li>
+    {% endfor %}
+</ul>
+
+{% if prev %}
+<p>{{prev.name}}</p>
+<a href="{% url 'course_detail' prev.id %}">Ссылка</a>
+{% endif %}
+
+{% if next %}
+<p>{{next.name}}</p>
+<a href="{% url 'course_detail' next.id %}">Ссылка</a>
+{% endif %}
+
+<form action="{% url 'course_list' %}" method="get">
+    <input type="text" name="q" />
+    <input type="submit" />
+</form>
+</body>
+</html>
