@@ -27,4 +27,17 @@ class Theme(models.Model):
     def __str__(self):
         return "{} - {}".format(self.course.name, self.name)
 
+
+class Callback(models.Model):
+    phone = models.CharField(verbose_name='Телефон', max_length=11, blank=False)
+    email = models.EmailField(verbose_name='Email', blank=False)
+    name = models.CharField(verbose_name='Имя', max_length=50, blank=False)
+    comment = models.TextField(verbose_name='Комментарий', blank=False)
+
+    class Meta:
+        verbose_name = 'Обратная связь'
+
+    def __str__(self):
+        return self.name
+
 # Create your models here.

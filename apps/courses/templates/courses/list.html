@@ -12,9 +12,11 @@
 {% endfor %}
 
 <form action="{% url 'course_list' %}" method="get">
-    <input type="text" name="q" />
-    <input type="submit" />
+    <input type="text" name="q"/>
+    <input type="submit"/>
 </form>
+
+<a href="{% url 'course_create' %}">Create</a>
 
 </body>
 </html>
